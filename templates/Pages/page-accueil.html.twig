@@ -1,0 +1,88 @@
+{% extends "Base/base.html.twig" %}
+
+{% block title %}Entreprise GARCIA{% endblock title %}
+
+    {% block content %}
+
+      <!-- MENU -->
+    <header class="container-fluid fond1">
+      <nav>
+        <ul class="row justify-content-around pt-5 menu">
+          <li>
+            <a href="{{ path('Accueil') }}"> Acceuil </a>
+          </li>
+          <li>
+            <a href="{{ path('Peintures') }}"> Peinture intérieur - extérieur </a>
+          </li>
+          <li>
+            <a href="{{ path('Toiture') }}"> Démoussage toiture </a>
+          </li>
+          <li>
+            <a href="{{ path('Travaux') }}"> Travaux </a>
+          </li>
+          <li>
+            <a href="{{ path('Réalisations') }}"> Mes réalisations </a>
+          </li>
+          <li>
+            <a href="{{ path('Contact') }}"> Contact </a>
+          </li>
+          <li>
+            <a href="{{ path('Connexion_Inscription') }}"> Connexion - inscription </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- BLOC ACCUEIL -->
+      <div class="row text-center flex-column divGarcia">
+        <h1>Entreprise GARCIA</h1>
+
+        <p>Artisan peintre à VILLEMOUTIERS (45270)</p>
+        <p>06.45.42.08.58</p>
+
+        <div class="button">
+          <a href="{{ path('Contact') }}"> <span>Mon devis gratuit</span> </a>
+        </div>
+      </div>
+    </header>
+
+
+    <main class="container-fluid">
+      <!-- SECTION 1 -->
+      <section>
+        <div class="row align-items-center flex-column text1">
+          <h2 class="col-lg-6 text-center">Qui sommes-nous ?</h2>
+
+          <p class="col-lg-4 text-center">
+            Entreprise GARCIA est un <strong>artisan peintre</strong> qui
+            réalise tout type de peintures ainsi que des travaux. Il saura vous
+            conseiller sur le choix de vos peintures en fonction du type de
+            surface que vous avez, et notamment vous aidez dans vos projet de
+            travaux.
+          </p>
+        </div>
+      </section>
+      <!-- SECTION 2 -->
+      <section>
+        <div class="row align-items-center flex-column text2">
+          <h2 class="col-lg-6 text-center">Où nous trouver ?</h2>
+
+          <p class="col-lg-3 text-center">
+            L'entreprise se déplace dans un rayon de
+            <strong class="nombre"> 400km ! </strong> Autour de VILLEMOUTIERS.
+          </p>
+
+          <!--  -->
+          <iframe
+          class="pt-3 pb-5"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42722.240270474205!2d2.516274993588281!3d47.991681170149626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5775d93f2cbc5%3A0x40dc8d70537d1d0!2s45270%20Villemoutiers!5e0!3m2!1sfr!2sfr!4v1592681886277!5m2!1sfr!2sfr" 
+          width="800" height="650" 
+          frameborder="0" 
+          style="border:0;" 
+          allowfullscreen="" 
+          aria-hidden="false" 
+          tabindex="0">
+          </iframe>
+        </div>
+      </section>
+    </main>
+    {% endblock content %}

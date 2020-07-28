@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="author" content="GOMEZ Guillaume" />
+        <meta name="description" content="" />
+        <meta name="keywords"
+              content="Peinture intérieur, extérieur, ravalement de façade, petit travaux"/>
+        <meta charset="UTF-8"/>
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0" />
+
+        <title>{% block title %}{% endblock title %}</title>
+
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+              integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+              crossorigin="anonymous"/>
+
+        <link rel="stylesheet" href="{{ asset('style.css') }}" />
+    </head>
+
+    <body>
+
+        {% block content %}
+        {% endblock content %}
+
+    <footer class="container-fluid">
+        <nav>
+            <ul class="row justify-content-around align-items-center m-0 py-3">
+                <li class="col-3 text-center">
+                    <a href=""> CGU-Mention légales</a>
+                </li>
+                <li class="col-3 text-center">
+                    <a href=""> Plan du site</a>
+                </li>
+                <li class="col-3 text-center">
+                    <a href="https://www.facebook.com/Entreprise-Garcia-645327215582537"
+                       target="_blank">
+                        <img src="{{ asset("img/facebook.png") }}"
+                             alt="logo"
+                             class="img-fluid logofb"/>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+                integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+                crossorigin="anonymous">
+        </script>
+
+        <script src="{{ asset('JS/main.js') }}"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous">
+        </script>
+
+        <script
+                src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+                integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+                crossorigin="anonymous">
+        </script>
+    </body>
+</html>

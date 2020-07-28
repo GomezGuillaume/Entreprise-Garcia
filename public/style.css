@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+/* PAGE ACCUEIL */
+.fond1 {
+  background-image: url("img/fond1.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+.fond1 ul.menu {
+    list-style-type: none;
+    font-size: 16px;
+    background-color: rgba(253, 253, 253, 0.479);
+    padding: 2%;
+  }
+
+.fond1 ul.menu a {
+      color: black;
+}
+
+a:hover {
+  color: black;
+}
+
+.divGarcia {
+  background-color: rgba(236, 240, 241, 0.7);
+  padding: 5%;
+  margin: 7% 20%;
+}
+
+.divGarcia p {
+    padding-top: 30px;
+    font-size: 20px;
+  }
+
+.button {
+  text-align: center;
+  background-color: #548687;
+  padding: 15px 0;
+  border-radius: 50px;
+  text-transform: uppercase;
+  margin: 0 30%;
+  margin-top: 10%;
+  transition: all 1s ease;
+}
+
+.button a {
+    color: white;
+}
+
+.button a:hover {
+  text-decoration: none;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.text1 p {
+  margin: 2% 0;
+  font-size: 18px;
+}
+
+.text1 h2 {
+  margin: 4% 0;
+}
+
+
+.text2 h2 {
+  margin-top: 10%;
+}
+
+.text2 p {
+  margin-top: 2%;
+}
+
+.nombre {
+  font-size: 18px;
+}
+
+/* PEINTURE INTERIEUR EXTERIEUR */
+.fond1 {
+    background-image: url("img/fond1.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.fond1 ul.menu {
+    list-style-type: none;
+    font-size: 16px;
+    background-color: rgba(253, 253, 253, 0.479);
+    padding: 2%;
+}
+
+.fond1 ul.menu a {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
+
+
+
+
+/* DEMOUSSAGE TOITURE */
+.fond3 {
+  background-image: url("img/fond2.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+.fond3 ul.menu a {
+    color: black;
+}
+
+.fond3 ul.menu {
+    list-style-type: none;
+    font-size: 16px;
+    background-color: rgba(253, 253, 253, 0.479);
+    padding: 2%;
+}
+
+.fond3 a:hover {
+    color: black;
+}
+
+/* TRAVAUX */
+.fond4 {
+    background-image: url("img/travaux.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.fond4 ul.menu {
+    list-style-type: none;
+    font-size: 16px;
+    background-color: rgba(253, 253, 253, 0.479);
+    padding: 2%;
+}
+
+.fond4 ul.menu a {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
+
+/*Mes realisations*/
+.fond5 ul.menu {
+    list-style-type: none;
+    font-size: 16px;
+    background-color: rgba(253, 253, 253, 0.479);
+    padding: 2%;
+}
+
+.fond5 ul.menu a {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
+
+/*CONTACT*/
+.fond6 ul.menu {
+    list-style-type: none;
+    font-size: 16px;
+    background-color: rgba(253, 253, 253, 0.479);
+    padding: 2%;
+}
+
+.fond6 ul.menu a {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
+
+/* FOOTER */
+footer {
+  background-color: rgba(92, 69, 69, 0.7);
+}
+
+footer ul {
+    font-size: 12px;
+    list-style-type: none;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+      color: white;
+}
+
+.logofb {
+
+}
+
+/*# sourceMappingURL=style.css.map */

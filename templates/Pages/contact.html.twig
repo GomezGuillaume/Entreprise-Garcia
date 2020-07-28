@@ -1,0 +1,17 @@
+{% extends "Base/base.html.twig" %}
+
+{% block content %}
+    <header class="container-fluid fond6">
+        <nav>
+            <ul class="row justify-content-around pt-5 menu">
+                <li><a href="{{ path('Accueil') }}"> Acceuil </a></li>
+                <li><a href="{{ path('Peintures') }}"> Peinture intérieur - extérieur </a></li>
+                <li><a href="{{ path('Toiture') }}"> Démoussage toiture </a></li>
+                <li><a href="{{ path('Travaux') }}"> Travaux </a></li>
+                <li><a href="{{ path('Réalisations') }}"> Mes réalisations </a></li>
+                <li><a href="{{ path('Contact') }}"> Contact</a></li>
+                <li><a href="{{ path('Connexion_Inscription') }}"> Connexion - inscription </a></li>
+            </ul>
+        </nav>
+    </header>
+{% endblock content %}
