@@ -1,0 +1,73 @@
+/* PAGE ACCUEIL */
+.fond_accueil {
+  background-image: url("img/fond_accueil.jpg");
+  @extend %fond;
+
+}
+
+.menu {
+  @extend %menu;
+}
+
+.menu a {
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
+.divGarcia {
+  background-color: rgba(236, 240, 241, 0.7);
+  padding: 5%;
+  margin: 7% 20%;
+}
+
+.divGarcia p {
+  padding-top: 30px;
+  font-size: 20px;
+}
+
+.button {
+  text-align: center;
+  background-color: #548687;
+  padding: 15px 0;
+  border-radius: 50px;
+  text-transform: uppercase;
+  margin: 0 30%;
+  margin-top: 10%;
+  transition: all 1s ease;
+}
+
+.button a {
+  color: white;
+}
+
+.button a:hover {
+  text-decoration: none;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.text1 p {
+  margin: 2% 0;
+  font-size: 18px;
+}
+
+.text1 h2 {
+  margin: 4% 0;
+}
+
+.text2 h2 {
+  margin-top: 10%;
+}
+
+.text2 p {
+  margin-top: 2%;
+}
+
+.nombre {
+  font-size: 18px;
+}

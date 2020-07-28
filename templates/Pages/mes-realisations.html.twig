@@ -1,17 +1,25 @@
 {% extends "Base/base.html.twig" %}
 
+
 {% block content %}
-    <header class="container-fluid fond5">
-        <nav>
-            <ul class="row justify-content-around pt-5 menu">
-                <li><a href="{{ path('Accueil') }}"> Acceuil </a></li>
-                <li><a href="{{ path('Peintures') }}"> Peinture intérieur - extérieur </a></li>
-                <li><a href="{{ path('Toiture') }}"> Démoussage toiture </a></li>
-                <li><a href="{{ path('Travaux') }}"> Travaux </a></li>
-                <li><a href="{{ path('Réalisations') }}"> Mes réalisations </a></li>
-                <li><a href="{{ path('Contact') }}"> Contact</a></li>
-                <li><a href="{{ path('Connexion_Inscription') }}"> Connexion - inscription </a></li>
-            </ul>
-        </nav>
-    </header>
+
+    <div id="slider-wrapper">
+        <div class="inner-wrapper">
+            <input checked type="radio" name="slide" class="control" id="Slide1" />
+            <label for="Slide1" id="s1"></label>
+            <input type="button" name="slide" class="control" id="Slide2" />
+            <label for="Slide2" id="s2"></label>
+            <input type="button" name="slide" class="control" id="Slide3" />
+            <label for="Slide3" id="s3"></label>
+            <input type="button" name="slide" class="control" id="Slide4" />
+            <label for="Slide4" id="s4"></label>
+            <div class="overflow-wrapper">
+                <a class="slide" href=""><img src="{{ asset('img/peinture/mur1.jpg') }}" /></a>
+                <a class="slide" href=""><img src="{{ asset('img/peinture/mur1a.jpg') }}" /></a>
+                <a class="slide" href=""><img src="{{ asset('img/peinture/piece1.jpg') }}" /></a>
+                <a class="slide" href=""><img src="{{ asset('img/peinture/piece1a.jpg') }}" /></a>
+            </div>
+        </div>
+    </div>
+
 {% endblock content %}

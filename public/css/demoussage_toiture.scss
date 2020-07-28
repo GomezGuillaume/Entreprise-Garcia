@@ -1,0 +1,5 @@
+/* DEMOUSSAGE TOITURE */
+.fond_toiture {
+  background-image: url("img/fond_toiture.jpg");
+  @extend %fond;
+}

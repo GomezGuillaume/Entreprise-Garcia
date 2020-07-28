@@ -1,0 +1,5 @@
+/* PEINTURE INTERIEUR EXTERIEUR */
+.fond1 {
+  background-image: url("img/fond1.jpg");
+  @extend %fond;
+}

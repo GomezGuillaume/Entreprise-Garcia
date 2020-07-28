@@ -1,106 +1,29 @@
-/* PAGE ACCUEIL */
-.fond_accueil {
-  background-image: url("img/fond_accueil.jpg");
-}
+@import "page_accueil";
+@import "peinture_int_ext";
+@import "demoussage_toiture";
+@import "travaux";
+@import "realisations";
+@import "contact";
 
-.menu a {
-  color: black;
-}
-
-a:hover {
-  color: black;
-}
-
-.divGarcia {
-  background-color: rgba(236, 240, 241, 0.7);
-  padding: 5%;
-  margin: 7% 20%;
-}
-
-.divGarcia p {
-  padding-top: 30px;
-  font-size: 20px;
-}
-
-.button {
-  text-align: center;
-  background-color: #548687;
-  padding: 15px 0;
-  border-radius: 50px;
-  text-transform: uppercase;
-  margin: 0 30%;
-  margin-top: 10%;
-  transition: all 1s ease;
-}
-
-.button a {
-  color: white;
-}
-
-.button a:hover {
-  text-decoration: none;
-}
-
-.button:hover {
-  transform: scale(1.1);
-}
-
-.text1 p {
-  margin: 2% 0;
-  font-size: 18px;
-}
-
-.text1 h2 {
-  margin: 4% 0;
-}
-
-.text2 h2 {
-  margin-top: 10%;
-}
-
-.text2 p {
-  margin-top: 2%;
-}
-
-.nombre {
-  font-size: 18px;
-}
-
-/* PEINTURE INTERIEUR EXTERIEUR */
-.fond1 {
-  background-image: url("img/fond1.jpg");
-}
-
-/* DEMOUSSAGE TOITURE */
-.fond_toiture {
-  background-image: url("img/fond_toiture.jpg");
-}
-
-/* TRAVAUX */
-.travaux {
-  background-image: url("img/travaux.jpg");
-}
-
-/*Mes realisations*/
-/*CONTACT*/
 * {
   margin: 0;
 }
 
-.fond_accueil, .fond1, .fond_toiture, .travaux {
+%fond {
   background-position: center;
   background-size: cover;
   height: 105vh;
   background-attachment: fixed;
 }
 
-.menu {
+%menu {
   list-style-type: none;
   font-size: 16px;
   background-color: rgba(253, 253, 253, 0.479);
   padding-top: 2%;
   padding-bottom: 2%;
 }
+
 
 /* FOOTER */
 footer {
@@ -188,7 +111,7 @@ footer a:hover {
 #s2:hover,
 #s3:hover,
 #s4:hover {
-  opacity: 0.5;
+  opacity: .50;
 }
 
 .inner-wrapper {
@@ -256,4 +179,4 @@ footer a:hover {
   float: left;
 }
 
-/*# sourceMappingURL=style.css.map */
+
