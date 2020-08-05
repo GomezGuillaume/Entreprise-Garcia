@@ -81,45 +81,7 @@ a:hover {
   background-image: url("img/travaux.jpg");
 }
 
-/*Mes realisations*/
-/*CONTACT*/
-* {
-  margin: 0;
-}
-
-.fond_accueil, .fond1, .fond_toiture, .travaux {
-  background-position: center;
-  background-size: cover;
-  height: 105vh;
-  background-attachment: fixed;
-}
-
-.menu {
-  list-style-type: none;
-  font-size: 16px;
-  background-color: rgba(253, 253, 253, 0.479);
-  padding-top: 2%;
-  padding-bottom: 2%;
-}
-
-/* FOOTER */
-footer {
-  background-color: rgba(92, 69, 69, 0.7);
-}
-
-footer ul {
-  font-size: 12px;
-  list-style-type: none;
-}
-
-footer a {
-  color: white;
-}
-
-footer a:hover {
-  color: white;
-}
-
+/*REALISATIONS*/
 /*SLIDER*/
 #slider-wrapper {
   width: 940px;
@@ -254,6 +216,48 @@ footer a:hover {
 .slide img {
   width: 25%;
   float: left;
+}
+
+/*CONTACT*/
+* {
+  margin: 0;
+}
+
+.fond_accueil, .fond1, .fond_toiture, .travaux {
+  background-position: center;
+  background-size: cover;
+  height: 105vh;
+  background-attachment: fixed;
+}
+
+.menu {
+  list-style-type: none;
+  font-size: 16px;
+  background-color: rgba(253, 253, 253, 0.479);
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+/* FOOTER */
+footer {
+  background-color: rgba(92, 69, 69, 0.7);
+}
+
+footer ul {
+  font-size: 12px;
+  list-style-type: none;
+}
+
+footer a {
+  color: white;
+}
+
+footer a:hover {
+  color: white;
+}
+
+.logofb {
+  max-width: 60%;
 }
 
 /*# sourceMappingURL=style.css.map */
