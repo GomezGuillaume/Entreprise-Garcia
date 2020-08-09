@@ -3,6 +3,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Form;
+use App\Form\FormType;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -53,7 +55,12 @@ class PagesController extends AbstractController {
      */
     public function Contact () {
 
-        return $this->render('Pages/contact.html.twig');
+        $form = new Form();
+        $form = $this->createForm(FormType::class, $form);
+
+        return $this->render('Pages/contact.html.twig', [
+            "form" => $form->createView()
+        ]);
     }
 
     /**

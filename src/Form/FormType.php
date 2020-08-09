@@ -6,6 +6,8 @@ use App\Entity\Form;
 use phpDocumentor\Reflection\Types\Null_;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,22 +16,22 @@ class FormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstname', null, [
+            ->add('firstname', TextType::class, [
                 "label"=>"Nom"
             ])
-            ->add('lastname', null, [
+            ->add('lastname', TextType::class, [
                 "label"=>"Prénom"
             ])
-            ->add('phone', null, [
+            ->add('phone', TextType::class, [
                 "label"=>"Téléphone"
             ])
-            ->add('email', null, [
+            ->add('email', TextType::class, [
                 "label"=>"E-mail"
             ])
-            ->add('adress', null, [
+            ->add('adress', TextType::class, [
                 "label"=>"Adresse"
             ])
-            ->add('message', null, [
+            ->add('message', TextareaType::class, [
                 "label"=>"Message"
             ])
             ->add('submit', SubmitType::class)
