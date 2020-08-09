@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Entity\Form;
 use App\Form\FormType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -53,10 +54,16 @@ class PagesController extends AbstractController {
     /**
      * @Route ("/contact", name = "Contact")
      */
-    public function Contact () {
+    public function Contact (Request $request) {
 
         $form = new Form();
         $form = $this->createForm(FormType::class, $form);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->addFlash('success', "Votre demande a bien été envoyé.");
+            return $this->redirectToRoute('Contact');
+        }
 
         return $this->render('Pages/contact.html.twig', [
             "form" => $form->createView()
