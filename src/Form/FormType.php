@@ -34,7 +34,9 @@ class FormType extends AbstractType
             ->add('message', TextareaType::class, [
                 "label"=>"Message"
             ])
-            ->add('submit', SubmitType::class)
+            ->add('submit', SubmitType::class, [
+                "label"=>"Envoyer"
+            ])
         ;
     }
 

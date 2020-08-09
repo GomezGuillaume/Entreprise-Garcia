@@ -4,11 +4,14 @@
     <div id="contactForm" class="pt-5">
         {{ form_start(form) }}
         <div class="">
-            <div class="col">{{ form_row(form.firstname) }}</div>
-            <div class="col">{{ form_row(form.lastname) }}</div>
-            <div class="col">{{ form_row(form.email) }}</div>
-            <div class="col">{{ form_row(form.phone) }}</div>
-            <div class="col">{{ form_row(form.adress) }}</div>
-            <div class="col">{{ form_row(form.message) }}</div>
+            <div class="pt-3">{{ form_row(form.firstname) }}</div>
+            <div class="pt-3">{{ form_row(form.lastname) }}</div>
+            <div class="pt-3">{{ form_row(form.email) }}</div>
+            <div class="pt-3">{{ form_row(form.phone) }}</div>
+            <div class="pt-3">{{ form_row(form.adress) }}</div>
+            <div class="pt-3">{{ form_row(form.message) }}</div>
+            <div class="pt-3">{{ form_row(form.submit) }}</div>
         </div>
+    </div>
+        {{ form_end(form) }}
 {% endblock content %}
