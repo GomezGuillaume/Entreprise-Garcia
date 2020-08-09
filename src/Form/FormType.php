@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Form;
 use phpDocumentor\Reflection\Types\Null_;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -25,7 +26,7 @@ class FormType extends AbstractType
             ->add('phone', TextType::class, [
                 "label"=>"Téléphone"
             ])
-            ->add('email', TextType::class, [
+            ->add('email', EmailType::class, [
                 "label"=>"E-mail"
             ])
             ->add('adress', TextType::class, [

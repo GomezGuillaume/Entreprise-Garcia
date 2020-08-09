@@ -5,9 +5,12 @@ namespace App\Controller;
 
 use App\Entity\Form;
 use App\Form\FormType;
+use App\Notification\ContactNotification;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\FormRepository;
 
 class PagesController extends AbstractController {
 
@@ -51,18 +54,39 @@ class PagesController extends AbstractController {
         return $this->render('Pages/mes-realisations.html.twig');
     }
 
+
     /**
-     * @Route ("/contact", name = "Contact")
+    * @Route ("/contact", name = "contact")
      */
-    public function Contact (Request $request) {
+    public function contact (Request $request, FormRepository $formRepository, \Swift_Mailer $mailer) {
 
         $form = new Form();
         $form = $this->createForm(FormType::class, $form);
         $form->handleRequest($request);
 
+
+
         if ($form->isSubmitted() && $form->isValid()) {
             $this->addFlash('success', "Votre demande a bien été envoyé.");
-            return $this->redirectToRoute('Contact');
+            $form->getData();
+
+            $message = (new \Swift_Message('Nouveau contact'))
+                // On attribue l'expéditeur
+                ->setFrom($form ["email"])
+                // On attribue le destinataire
+                ->setTo('guillaume.gomez2@orange.fr')
+                // On crée le texte avec la vue
+                ->setBody(
+                    $this->renderView(
+                        'Pages/contact.html.twig',
+                    ),
+                    'text/html'
+                )
+            ;
+            $mailer->send($message);
+
+
+            return $this->redirectToRoute('contact');
         }
 
         return $this->render('Pages/contact.html.twig', [
@@ -77,6 +101,5 @@ class PagesController extends AbstractController {
 
         return $this->render('Pages/connexion-inscription.html.twig');
     }
-
 
 }
