@@ -3,19 +3,15 @@
 
 namespace App\Controller;
 
-use App\Entity\Form;
-use App\Form\FormType;
-use App\Notification\ContactNotification;
-use Symfony\Component\HttpFoundation\Request;
+
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Doctrine\ORM\EntityManagerInterface;
-use App\Repository\FormRepository;
+
 
 class PagesController extends AbstractController {
 
     /**
-     * @Route ("/", name = "Accueil")
+     * @Route ("/", name = "accueil")
      */
     public function Accueil () {
 
@@ -23,7 +19,7 @@ class PagesController extends AbstractController {
     }
 
     /**
-     * @Route ("/peintures", name = "Peintures")
+     * @Route ("/peintures", name = "peintures")
      */
     public function Peintures () {
 
@@ -31,7 +27,7 @@ class PagesController extends AbstractController {
     }
 
     /**
-     * @Route ("/toiture", name = "Toiture")
+     * @Route ("/toiture", name = "toiture")
      */
     public function Toiture () {
 
@@ -39,7 +35,7 @@ class PagesController extends AbstractController {
     }
 
     /**
-     * @Route ("/travaux", name = "Travaux")
+     * @Route ("/travaux", name = "travaux")
      */
     public function Travaux () {
 
@@ -47,7 +43,7 @@ class PagesController extends AbstractController {
     }
 
     /**
-     * @Route ("/realisation", name = "Réalisations")
+     * @Route ("/realisation", name = "realisations")
      */
     public function Réalisation () {
 
@@ -55,51 +51,6 @@ class PagesController extends AbstractController {
     }
 
 
-    /**
-    * @Route ("/contact", name = "contact")
-     */
-    public function contact (Request $request, FormRepository $formRepository, \Swift_Mailer $mailer) {
 
-        $form = new Form();
-        $form = $this->createForm(FormType::class, $form);
-        $form->handleRequest($request);
-
-
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->addFlash('success', "Votre demande a bien été envoyé.");
-            $form->getData();
-
-            $message = (new \Swift_Message('Nouveau contact'))
-                // On attribue l'expéditeur
-                ->setFrom($form ["email"])
-                // On attribue le destinataire
-                ->setTo('guillaume.gomez2@orange.fr')
-                // On crée le texte avec la vue
-                ->setBody(
-                    $this->renderView(
-                        'Pages/contact.html.twig',
-                    ),
-                    'text/html'
-                )
-            ;
-            $mailer->send($message);
-
-
-            return $this->redirectToRoute('contact');
-        }
-
-        return $this->render('Pages/contact.html.twig', [
-            "form" => $form->createView()
-        ]);
-    }
-
-    /**
-     * @Route ("/espace_utilisateur", name = "Connexion_Inscription")
-     */
-    public function espace_utilisateur () {
-
-        return $this->render('Pages/connexion-inscription.html.twig');
-    }
 
 }

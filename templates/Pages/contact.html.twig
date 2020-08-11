@@ -1,17 +1,25 @@
 {% extends "Base/base.html.twig" %}
 
 {% block content %}
-    <div id="contactForm" class="pt-5">
-        {{ form_start(form) }}
-        <div class="">
-            <div class="pt-3">{{ form_row(form.firstname) }}</div>
-            <div class="pt-3">{{ form_row(form.lastname) }}</div>
-            <div class="pt-3">{{ form_row(form.email) }}</div>
-            <div class="pt-3">{{ form_row(form.phone) }}</div>
-            <div class="pt-3">{{ form_row(form.adress) }}</div>
-            <div class="pt-3">{{ form_row(form.message) }}</div>
-            <div class="pt-3 mb-5">{{ form_row(form.submit) }}</div>
+
+    {% for message in app.flashes ('message') %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
         </div>
+    {% endfor %}
+
+    <h2 class="row justify-content-center">Nous contacter</h2>
+
+    <div id="contactForm" class="pt-5">
+        {{ form_start(contactForm) }}
+            <div class="pt-4">{{ form_row(contactForm.lastname) }}</div>
+            <div class="pt-4">{{ form_row(contactForm.firstname) }}</div>
+            <div class="pt-4">{{ form_row(contactForm.email) }}</div>
+            <div class="pt-4">{{ form_row(contactForm.phone) }}</div>
+            <div class="pt-4">{{ form_row(contactForm.adress) }}</div>
+            <div class="pt-4">{{ form_row(contactForm.content) }}</div>
+            <div class="pt-4">{{ form_row(contactForm.submit) }}</div>
+        {{ form_end(contactForm) }}
     </div>
-        {{ form_end(form) }}
+
 {% endblock content %}

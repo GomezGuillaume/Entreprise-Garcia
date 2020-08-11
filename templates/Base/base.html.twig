@@ -23,17 +23,16 @@
     <header class="container-fluid p-0" >
         <nav class="{% block classFondNav %}{% endblock classFondNav %}">
             <ul class="row justify-content-around menu ">
-                <li><a href="{{ path('Accueil') }}"> Acceuil </a></li>
-                <li><a href="{{ path('Peintures') }}"> Peinture intérieur - extérieur </a></li>
-                <li><a href="{{ path('Toiture') }}"> Démoussage toiture </a></li>
-                <li><a href="{{ path('Travaux') }}"> Travaux </a></li>
-                <li><a href="{{ path('Réalisations') }}"> Mes réalisations </a></li>
+                <li><a href="{{ path('accueil') }}"> Acceuil </a></li>
+                <li><a href="{{ path('peintures') }}"> Peinture intérieur - extérieur </a></li>
+                <li><a href="{{ path('toiture') }}"> Démoussage toiture </a></li>
+                <li><a href="{{ path('travaux') }}"> Travaux </a></li>
+                <li><a href="{{ path('realisations') }}"> Mes réalisations </a></li>
                 <li><a href="{{ path('contact') }}"> Contact</a></li>
             </ul>
 
             {% block contentNav %}
             {% endblock contentNav %}
-
         </nav>
     </header>
 
