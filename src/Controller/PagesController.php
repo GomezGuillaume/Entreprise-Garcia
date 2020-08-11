@@ -26,13 +26,6 @@ class PagesController extends AbstractController {
         return $this->render("Pages/interieur-exterieur.html.twig");
     }
 
-    /**
-     * @Route ("/toiture", name = "toiture")
-     */
-    public function Toiture () {
-
-        return $this->render('Pages/demoussage-toiture.html.twig');
-    }
 
     /**
      * @Route ("/travaux", name = "travaux")
