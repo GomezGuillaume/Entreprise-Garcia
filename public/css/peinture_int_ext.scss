@@ -1,11 +1,18 @@
 /* PEINTURE INTERIEUR EXTERIEUR */
-.fond_accueil {
-  background-image: url("img/fond_accueil.jpg");
-  @extend %fond;
+
+.bloc1{
+  background-color: rgba(236, 240, 241, 0.7);
+  padding: 5%;
 }
 
+.bloc2{
+  background-color: rgba(236, 240, 241, 0.7);
+  padding: 5%;
+}
 
-
+.blocG{
+  padding-bottom: 5%;
+}
 
 
 
