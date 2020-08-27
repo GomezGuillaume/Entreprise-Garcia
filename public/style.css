@@ -169,6 +169,11 @@ a:hover {
   padding-bottom: 3%;
 }
 
+.form {
+  width: 30%;
+  margin: 0 auto;
+}
+
 * {
   margin: 0;
 }
