@@ -16,7 +16,7 @@ class LoginFormController extends AbstractController
     {
          if ($this->getUser())
          {
-             return $this->redirectToRoute('realisations');
+             return $this->redirectToRoute('');
          }
 
 

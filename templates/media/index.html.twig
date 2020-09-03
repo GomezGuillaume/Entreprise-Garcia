@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 
-<title>Media index</title>
+
 
 {% block body %}
     <h1>Media index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Title</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Create three columns of equal width */
+    .columns {
+        float: left;
+        width: 33.3%; /* si tu veux en 4 col = 25% */
+        padding: 8px;
+    }
+    .img-resp{
+        max-width: 350px;
+        width:100%;
+        height:auto;
+
+    }
+
+    /* Change the width of the three columns to 100%
+    (to stack horizontally on small screens) */
+    @media only screen and (max-width: 800px) {
+        .columns {
+            width: 100%;
+        }
+    }
+
+</style>
+
         {% for medium in media %}
-            <tr>
-                <td>{{ medium.id }}</td>
-                <td>{{ medium.name }}</td>
-                <td>{{ medium.title }}</td>
-                <td>
-                    <a href="{{ path('media_show', {'id': medium.id}) }}">show</a>
-                    <a href="{{ path('media_edit', {'id': medium.id}) }}">edit</a>
-                </td>
-            </tr>
+
+                <div class="columns">
+                    <figure>
+                        <img src="{{ asset('img/peinture') }}/{{ medium.name }}" class="img-resp" alt="{{ medium.title }}">
+                        <figcaption>{{ medium.title }}</figcaption>
+                    </figure>
+                </div>
+
+
+
+
+
+
+            </div>
+
+
         {% else %}
-            <tr>
+
                 <td colspan="4">no records found</td>
-            </tr>
+
         {% endfor %}
-        </tbody>
-    </table>
+
+
 
     <a href="{{ path('media_new') }}">Create new</a>
 {% endblock %}
