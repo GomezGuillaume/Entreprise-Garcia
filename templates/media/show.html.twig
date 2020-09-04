@@ -1,30 +1,18 @@
+<!DOCTYPE html>
 
-
+<title>Media</title>
 
 {% block body %}
-    <h1>Modifications images</h1>
+    <h1>Media</h1>
 
-    {% for medium in media %}
-        <tr>
-            <td>{{ medium.id }}</td>
-            <td>
-                <figure>
-                    <img src="{{ asset('img/peinture') }}/{{ medium.name }}" width="400px" alt="{{ medium.title }}">
-                    <figcaption>{{ medium.title }}</figcaption>
-                </figure>
-            </td>
-            <td>{{ medium.title }}</td>
-            <td>
-                <a href="{{ path('media_show', {'id': medium.id}) }}">show</a>
-                <a href="{{ path('media_edit', {'id': medium.id}) }}">edit</a>
-            </td>
-        </tr>
-    {% else %}
-        <tr>
-            <td colspan="4">no records found</td>
-        </tr>
-    {% endfor %}
+    <figure>
+        <img src="{{ asset('img/peinture') }}/{{ medium.name }}" class="img-resp" alt="{{ medium.title }}">
+        <figcaption>{{ medium.title }}</figcaption>
+    </figure>
 
-{% endblock body %}
+    <a href="{{ path('media_index') }}">Retour vers les photos</a>
 
+    <a href="{{ path('media_edit', {'id': medium.id}) }}">Éditer la photo</a>
 
+    {{ include('media/_delete_form.html.twig') }}
+{% endblock %}

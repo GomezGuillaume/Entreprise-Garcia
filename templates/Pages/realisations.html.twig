@@ -1,0 +1,17 @@
+{% extends 'Base/base.html.twig' %}
+
+{% block content %}
+<h1>Mes réalisations</h1>
+
+{% for medium in media %}
+
+<div class="columns">
+    <figure>
+        <img src="{{ asset('img/peinture') }}/{{ medium.name }}" class="img-resp" alt="{{ medium.title }}">
+        <figcaption>{{ medium.title }}</figcaption>
+    </figure>
+</div>
+
+{% endfor %}
+
+{% endblock content %}

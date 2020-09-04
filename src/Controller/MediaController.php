@@ -3,11 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Media;
-use App\Form\MediaType;
+use App\Form\Media1Type;
 use App\Repository\MediaRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,8 +17,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class MediaController extends AbstractController
 {
     /**
-     * @Route("/realisations", name="realisation", methods={"GET"})
-     * Affichage en Front pour les visiteurs
+     * @Route("/", name="media_index", methods={"GET"})
      */
     public function index(MediaRepository $mediaRepository): Response
     {
@@ -30,12 +27,12 @@ class MediaController extends AbstractController
     }
 
     /**
-     * @Route("/ajouter-une-image", name="media_new", methods={"GET","POST"})
+     * @Route("/new", name="media_new", methods={"GET","POST"})
      */
-    public function new(Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
+    public function new(Request $request, SluggerInterface $slugger): Response
     {
         $medium = new Media();
-        $form = $this->createForm(MediaType::class, $medium);
+        $form = $this->createForm(Media1Type::class, $medium);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -53,50 +50,47 @@ class MediaController extends AbstractController
                 $safeName = $slugger->slug($originalImageName);
                 $uniquePeintureName = $safeName . '-' . uniqid() . '.' . $MediaCoverFile->guessExtension();
 
-            $entityManager = $this->getDoctrine()->getManager();
+                $entityManager = $this->getDoctrine()->getManager();
 
-            // j'utilise un bloc de try and catch
-            // qui agit comme une conditions, mais si le bloc try échoue, ça
-            // soulève une erreur, qu'on peut gérer avec le catch
-            try {
+                // j'utilise un bloc de try and catch
+                // qui agit comme une conditions, mais si le bloc try échoue, ça
+                // soulève une erreur, qu'on peut gérer avec le catch
+                try {
 
-                // je prends l'image uploadée
-                // et je la déplace dans un dossier (dans public) + je la renomme avec
-                // le nom unique générée
-                // j'utilise un parametre (défini dans services.yaml) pour savoir
-                // dans quel dossier je la déplace
-                // un parametre = une sorte de variable globale
-                $MediaCoverFile->move(
-                    $this->getParameter('peinture'),
-                    $uniquePeintureName
-                );
-            } catch (FileException $e) {
-                return new Response($e->getMessage());
+                    // je prends l'image uploadée
+                    // et je la déplace dans un dossier (dans public) + je la renomme avec
+                    // le nom unique générée
+                    // j'utilise un parametre (défini dans services.yaml) pour savoir
+                    // dans quel dossier je la déplace
+                    // un parametre = une sorte de variable globale
+                    $MediaCoverFile->move(
+                        $this->getParameter('peinture'),
+                        $uniquePeintureName
+                    );
+                } catch (FileException $e) {
+                    return new Response($e->getMessage());
+                }
+
+
+                // je sauvegarde dans la colonne MediaCover le nom de mon image
+                $medium->setName($uniquePeintureName);
             }
 
-
-            // je sauvegarde dans la colonne MediaCover le nom de mon image
-            $medium->setName($uniquePeintureName);
-        }
 
             $entityManager->persist($medium);
             $entityManager->flush();
 
-            $this->addFlash('success', "L'image a bien été uploadé");
-
-            return $this->redirectToRoute('media_show');
+            return $this->redirectToRoute('media_index');
         }
 
-        return $this->render('media/show.html.twig', [
+        return $this->render('media/new.html.twig', [
             'medium' => $medium,
             'form' => $form->createView(),
         ]);
     }
 
-
-
     /**
-     * @Route("/show", name="media_show", methods={"GET"})
+     * @Route("/{id}", name="media_show", methods={"GET"})
      */
     public function show(Media $medium): Response
     {
@@ -105,13 +99,12 @@ class MediaController extends AbstractController
         ]);
     }
 
-
     /**
      * @Route("/{id}/edit", name="media_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Media $medium): Response
     {
-        $form = $this->createForm(MediaType::class, $medium);
+        $form = $this->createForm(Media1Type::class, $medium);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

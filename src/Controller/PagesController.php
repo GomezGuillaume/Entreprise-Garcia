@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 
+use App\Repository\MediaRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -38,9 +39,11 @@ class PagesController extends AbstractController {
     /**
      * @Route ("/realisation", name = "realisations")
      */
-    public function Réalisation () {
+    public function Réalisation (MediaRepository $mediaRepository) {
 
-        return $this->render('Pages/mes-realisations.html.twig');
+        return $this->render('Pages/realisations.html.twig', [
+            'media' => $mediaRepository->findAll(),
+        ]);
     }
 
 

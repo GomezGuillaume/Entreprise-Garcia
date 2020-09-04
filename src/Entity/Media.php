@@ -18,14 +18,14 @@ class Media
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private $Name;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $title;
+    private $Title;
 
     public function getId(): ?int
     {
@@ -34,24 +34,24 @@ class Media
 
     public function getName(): ?string
     {
-        return $this->name;
+        return $this->Name;
     }
 
-    public function setName(?string $name): self
+    public function setName(string $Name): self
     {
-        $this->name = $name;
+        $this->Name = $Name;
 
         return $this;
     }
 
     public function getTitle(): ?string
     {
-        return $this->title;
+        return $this->Title;
     }
 
-    public function setTitle(string $title): self
+    public function setTitle(string $Title): self
     {
-        $this->title = $title;
+        $this->Title = $Title;
 
         return $this;
     }

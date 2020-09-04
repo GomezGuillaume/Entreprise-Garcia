@@ -1,62 +1,26 @@
-<!DOCTYPE html>
+{% extends 'Base/base.html.twig' %}
 
 
 
-{% block body %}
-    <h1>Media index</h1>
+{% block content %}
+    <h1>Photos</h1>
 
-<style>
-    * {
-        box-sizing: border-box;
-    }
+    {% for medium in media %}
 
-    /* Create three columns of equal width */
-    .columns {
-        float: left;
-        width: 33.3%; /* si tu veux en 4 col = 25% */
-        padding: 8px;
-    }
-    .img-resp{
-        max-width: 350px;
-        width:100%;
-        height:auto;
+        <div class="columns">
+            <figure>
+                <img src="{{ asset('img/peinture') }}/{{ medium.name }}" class="img-resp" alt="{{ medium.title }}">
+                <figcaption>{{ medium.title }}</figcaption>
+            </figure>
+        </div>
 
-    }
+        <a href="{{ path('media_show', {'id': medium.id}) }}">Voir la photo</a>
 
-    /* Change the width of the three columns to 100%
-    (to stack horizontally on small screens) */
-    @media only screen and (max-width: 800px) {
-        .columns {
-            width: 100%;
-        }
-    }
+    {% else %}
+        <tr>
+            <td colspan="4">no records found</td>
+        </tr>
+    {% endfor %}
 
-</style>
-
-        {% for medium in media %}
-
-                <div class="columns">
-                    <figure>
-                        <img src="{{ asset('img/peinture') }}/{{ medium.name }}" class="img-resp" alt="{{ medium.title }}">
-                        <figcaption>{{ medium.title }}</figcaption>
-                    </figure>
-                </div>
-
-
-
-
-
-
-            </div>
-
-
-        {% else %}
-
-                <td colspan="4">no records found</td>
-
-        {% endfor %}
-
-
-
-    <a href="{{ path('media_new') }}">Create new</a>
-{% endblock %}
+    <a href="{{ path('media_new') }}">Ajouter une image</a>
+{% endblock content %}
