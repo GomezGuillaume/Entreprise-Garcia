@@ -162,6 +162,31 @@ a:hover {
   background-image: url("img/travaux.jpg");
 }
 
+* {
+  box-sizing: border-box;
+}
+
+/* Create three columns of equal width */
+.columns {
+  float: left;
+  width: 33.3%;
+  /* si tu veux en 4 col = 25% */
+  padding: 8px;
+}
+
+.img-resp {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+}
+
+/* Change the width of the three columns to 100%
+(to stack horizontally on small screens) */
+@media only screen and (max-width: 800px) {
+  .columns {
+    width: 100%;
+  }
+}
 /*CONTACT*/
 #contactForm {
   margin-left: 3%;
