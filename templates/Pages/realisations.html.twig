@@ -5,9 +5,9 @@
 
 {% for medium in media %}
 
-<div>
+<div class="row">
     <figure>
-        <img src="{{ asset('img/peinture') }}/{{ medium.name }}" class="img-resp" alt="{{ medium.title }}">
+        <img src="{{ asset('img/peinture') }}/{{ medium.name }}" class="img-fluid" alt="{{ medium.title }}">
         <figcaption>{{ medium.title }}</figcaption>
     </figure>
 </div>

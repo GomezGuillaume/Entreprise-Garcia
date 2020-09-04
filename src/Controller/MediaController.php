@@ -102,12 +102,51 @@ class MediaController extends AbstractController
     /**
      * @Route("/{id}/edit", name="media_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Media $medium): Response
+    public function edit(Request $request, Media $medium, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(Media1Type::class, $medium);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $MediaCoverFile = $form->get('name')->getData();
+
+            if ($MediaCoverFile) {
+
+                // je récupère le nom de l'image
+                $originalImageName = pathinfo($MediaCoverFile->getClientOriginalName(), PATHINFO_FILENAME);
+
+                // et grâce à son nom original, je gènère un nouveau qui sera unique
+                // pour éviter d'avoir des doublons de noms d'image en BDD
+                $safeName = $slugger->slug($originalImageName);
+                $uniquePeintureName = $safeName . '-' . uniqid() . '.' . $MediaCoverFile->guessExtension();
+
+                $entityManager = $this->getDoctrine()->getManager();
+
+                // j'utilise un bloc de try and catch
+                // qui agit comme une conditions, mais si le bloc try échoue, ça
+                // soulève une erreur, qu'on peut gérer avec le catch
+                try {
+
+                    // je prends l'image uploadée
+                    // et je la déplace dans un dossier (dans public) + je la renomme avec
+                    // le nom unique générée
+                    // j'utilise un parametre (défini dans services.yaml) pour savoir
+                    // dans quel dossier je la déplace
+                    // un parametre = une sorte de variable globale
+                    $MediaCoverFile->move(
+                        $this->getParameter('peinture'),
+                        $uniquePeintureName
+                    );
+                } catch (FileException $e) {
+                    return new Response($e->getMessage());
+                }
+
+
+                // je sauvegarde dans la colonne MediaCover le nom de mon image
+                $medium->setName($uniquePeintureName);
+            }
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('media_index');
