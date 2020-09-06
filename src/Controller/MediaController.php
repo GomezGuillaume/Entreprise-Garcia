@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\Media;
 use App\Form\Media1Type;
 use App\Repository\MediaRepository;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -77,10 +79,13 @@ class MediaController extends AbstractController
             }
 
 
+
             $entityManager->persist($medium);
             $entityManager->flush();
 
             return $this->redirectToRoute('media_index');
+
+            $this->addFlash('success', "L'image a bien été uploadé");
         }
 
         return $this->render('media/new.html.twig', [

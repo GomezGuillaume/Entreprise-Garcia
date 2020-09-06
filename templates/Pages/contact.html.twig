@@ -12,13 +12,25 @@
 
     <div id="contactForm" class="pt-5">
         {{ form_start(contactForm) }}
-            <div class="pt-4">{{ form_row(contactForm.lastname) }}</div>
-            <div class="pt-4">{{ form_row(contactForm.firstname) }}</div>
-            <div class="pt-4">{{ form_row(contactForm.email) }}</div>
-            <div class="pt-4">{{ form_row(contactForm.phone) }}</div>
-            <div class="pt-4">{{ form_row(contactForm.adress) }}</div>
-            <div class="pt-4">{{ form_row(contactForm.content) }}</div>
-            <div class="pt-4">{{ form_row(contactForm.submit) }}</div>
+            <div>{{ form_label(contactForm.lastname) }}</div>
+            <div>{{ form_widget(contactForm.lastname, {'attr' : {'class' : 'widget_contact'}}) }}</div>
+
+            <div class="pt-4">{{ form_label(contactForm.firstname) }}</div>
+            <div>{{ form_widget(contactForm.firstname, {'attr' : {'class' : 'widget_contact'}}) }}</div>
+
+            <div class="pt-4">{{ form_label(contactForm.email) }}</div>
+            <div>{{ form_widget(contactForm.email, {'attr' : {'class' : 'widget_contact'}}) }}</div>
+
+            <div class="pt-4">{{ form_label(contactForm.phone) }}</div>
+            <div>{{ form_widget(contactForm.phone, {'attr' : {'class' : 'widget_contact'}}) }}</div>
+
+            <div class="pt-4">{{ form_label(contactForm.adress) }}</div>
+            <div>{{ form_widget(contactForm.adress, {'attr' : {'class' : 'widget_contact'}}) }}</div>
+
+            <div class="pt-4">{{ form_label(contactForm.content) }}</div>
+            <div>{{ form_widget(contactForm.content, {'attr' : {'class' : 'widget_contact'}}) }}</div>
+
+            <div class="Wsub">{{ form_widget(contactForm.submit, {'attr' : {'class' : 'widget_submit'}}) }}</div>
         {{ form_end(contactForm) }}
     </div>
 
