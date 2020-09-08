@@ -4,18 +4,6 @@
   @extend %fond;
 }
 
-.menu {
-  @extend %menu;
-}
-
-.menu a {
-  color: black;
-}
-
-a:hover {
-  color: black;
-}
-
 .divGarcia {
   background-color: rgba(236, 240, 241, 0.7);
   padding: 5%;

@@ -8,9 +8,9 @@
         </div>
     {% endfor %}
 
-    <h2 class="row justify-content-center">Nous contacter</h2>
+    <h2 class="row justify-content-center pt-5">Nous contacter</h2>
 
-    <div id="contactForm" class="pt-5">
+    <div id="contactForm" class="pt-5 row">
         {{ form_start(contactForm) }}
             <div>{{ form_label(contactForm.lastname) }}</div>
             <div>{{ form_widget(contactForm.lastname, {'attr' : {'class' : 'widget_contact'}}) }}</div>
@@ -30,7 +30,7 @@
             <div class="pt-4">{{ form_label(contactForm.content) }}</div>
             <div>{{ form_widget(contactForm.content, {'attr' : {'class' : 'widget_contact'}}) }}</div>
 
-            <div class="Wsub">{{ form_widget(contactForm.submit, {'attr' : {'class' : 'widget_submit'}}) }}</div>
+            <div class="w-sub">{{ form_widget(contactForm.submit, {'attr' : {'class' : 'widget_submit'}}) }}</div>
         {{ form_end(contactForm) }}
     </div>
 

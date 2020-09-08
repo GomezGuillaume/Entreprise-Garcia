@@ -2,10 +2,11 @@
 
 <title>New Media</title>
 
-{% block body %}
+{% block content %}
     <h1>Importer une photo</h1>
 
-    {{ include('media/_form.html.twig') }}
+    {{ include('admin/_form.html.twig') }}
 
     <a href="{{ path('media_index') }}">Retour vers les photos</a>
-{% endblock %}
+
+{% endblock content %}

@@ -23,7 +23,7 @@ class MediaController extends AbstractController
      */
     public function index(MediaRepository $mediaRepository): Response
     {
-        return $this->render('media/index.html.twig', [
+        return $this->render('admin/index.html.twig', [
             'media' => $mediaRepository->findAll(),
         ]);
     }
@@ -88,7 +88,7 @@ class MediaController extends AbstractController
             $this->addFlash('success', "L'image a bien été uploadé");
         }
 
-        return $this->render('media/new.html.twig', [
+        return $this->render('admin/new.html.twig', [
             'medium' => $medium,
             'form' => $form->createView(),
         ]);
@@ -99,7 +99,7 @@ class MediaController extends AbstractController
      */
     public function show(Media $medium): Response
     {
-        return $this->render('media/show.html.twig', [
+        return $this->render('admin/show.html.twig', [
             'medium' => $medium,
         ]);
     }
@@ -157,7 +157,7 @@ class MediaController extends AbstractController
             return $this->redirectToRoute('media_index');
         }
 
-        return $this->render('media/edit.html.twig', [
+        return $this->render('admin/edit.html.twig', [
             'medium' => $medium,
             'form' => $form->createView(),
         ]);

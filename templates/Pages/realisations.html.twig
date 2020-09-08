@@ -1,11 +1,11 @@
 {% extends 'Base/base.html.twig' %}
 
 {% block content %}
-<h1>Mes réalisations</h1>
+<h1 class="text-center pt-5">Mes réalisations</h1>
 
 {% for medium in media %}
 
-<div class="row">
+<div class="image">
     <figure>
         <img src="{{ asset('img/peinture') }}/{{ medium.name }}" class="img-fluid" alt="{{ medium.title }}">
         <figcaption>{{ medium.title }}</figcaption>
