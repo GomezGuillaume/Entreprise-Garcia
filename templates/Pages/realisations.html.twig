@@ -3,15 +3,15 @@
 {% block content %}
 <h1 class="text-center pt-5">Mes réalisations</h1>
 
+    <div class="flex-container">
 {% for medium in media %}
 
-<div class="image">
-    <figure>
-        <img src="{{ asset('img/peinture') }}/{{ medium.name }}" class="img-fluid" alt="{{ medium.title }}">
-        <figcaption>{{ medium.title }}</figcaption>
-    </figure>
-</div>
+    <div>
+        <a data-fancybox="gallery" href="{{ asset('img/peinture') }}/{{ medium.name }}"  alt="{{ medium.title }}">
+            <img src="{{ asset('img/peinture') }}/{{ medium.name }}"  alt="{{ medium.title }}"></a>
+            <p>{{ medium.title }}</p>
+    </div>
 
 {% endfor %}
-
+    </div>
 {% endblock content %}

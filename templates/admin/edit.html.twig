@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-
-<title>Edit Media</title>
+{% extends 'Base/base.html.twig' %}
 
 {% block content %}
-    <h1>Modfication photo</h1>
+    <h1 class="text-center">Modfication photo</h1>
 
-    {{ include('admin/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('media_index') }}">Retour vers les photos</a>
+    {{ include('admin/_form.html.twig', {'button_label': 'Éditer'}) }}
 
     {{ include('admin/_delete_form.html.twig') }}
+
+    <div class="btn"><a href="{{ path('media_index') }}">Retour vers les photos</a></div>
+
 {% endblock content %}

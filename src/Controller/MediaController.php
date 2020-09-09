@@ -78,8 +78,6 @@ class MediaController extends AbstractController
                 $medium->setName($uniquePeintureName);
             }
 
-
-
             $entityManager->persist($medium);
             $entityManager->flush();
 
@@ -93,6 +91,7 @@ class MediaController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
 
     /**
      * @Route("/{id}", name="media_show", methods={"GET"})

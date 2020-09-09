@@ -1,28 +1,27 @@
 {% extends 'Base/base.html.twig' %}
 
-
-
 {% block content %}
-    <h1 class="text-center pt-5">Index Photos</h1>
 
+<h1 class="text-center pt-5" xmlns="http://www.w3.org/1999/html">Index Photos</h1>
+
+    <div class="flex-container">
     {% for medium in media %}
 
-        <div class="image-admin image">
-            <figure>
-                <img src="{{ asset('img/peinture') }}/{{ medium.name }}" class="img-fluid" alt="{{ medium.title }}">
-                <figcaption>{{ medium.title }}</figcaption>
-            </figure>
-        </div>
-
-        <a href="{{ path('media_show', {'id': medium.id}) }}">Voir la photo</a>
+            <div>
+                 <a data-fancybox="gallery" href="{{ asset('img/peinture') }}/{{ medium.name }}"  alt="{{ medium.title }}">
+                <img src="{{ asset('img/peinture') }}/{{ medium.name }}"  alt="{{ medium.title }}"></a>
+                <p>{{ medium.title }}</p>
+                <p class="btn"><a href="{{ path('media_show', {'id': medium.id}) }}">Voir la photo</a></p>
+            </div>
 
     {% else %}
         <tr>
             <td colspan="4">no records found</td>
         </tr>
     {% endfor %}
+    </div>
 
-    <a href="{{ path('media_new') }}">Ajouter une image</a>
+    <div class="btn"><a href="{{ path('media_new') }}">Ajouter une image</a></div>
 
-    <a href="{{ path('app_logout') }}">Se déconnecter</a>
+    <div class="btn"><a href="{{ path('app_logout') }}">Se déconnecter</a></div>
 {% endblock content %}

@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-
-<title>New Media</title>
+{% extends 'Base/base.html.twig' %}
 
 {% block content %}
-    <h1>Importer une photo</h1>
+    <h1 class="text-center pt-5">Importer une photo</h1>
 
     {{ include('admin/_form.html.twig') }}
 
-    <a href="{{ path('media_index') }}">Retour vers les photos</a>
+    <div class="btn"><a href="{{ path('media_index') }}">Retour vers les photos</a></div>
 
 {% endblock content %}

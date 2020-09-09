@@ -1,18 +1,17 @@
-<!DOCTYPE html>
+{% extends 'Base/base.html.twig' %}
 
-<title>Media</title>
 
 {% block content %}
-    <h1>Media</h1>
+    <h1 class="text-center">Media</h1>
 
-    <figure>
+    <div class="container">
         <img src="{{ asset('img/peinture') }}/{{ medium.name }}" class="img-resp" alt="{{ medium.title }}">
-        <figcaption>{{ medium.title }}</figcaption>
-    </figure>
+        <span>{{ medium.title }}</span>
+    </div>
 
-    <a href="{{ path('media_index') }}">Retour vers les photos</a>
+    <div class="btn"><a href="{{ path('media_index') }}">Retour vers les photos</a></div>
 
-    <a href="{{ path('media_edit', {'id': medium.id}) }}">Éditer la photo</a>
+    <div class="btn"><a href="{{ path('media_edit', {'id': medium.id}) }}">Éditer la photo</a></div>
 
     {{ include('admin/_delete_form.html.twig') }}
 
