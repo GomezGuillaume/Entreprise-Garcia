@@ -4,7 +4,7 @@
 
 {% block content %}
 
-    <h1 class="h3 mb-3 font-weight-normal text-center">Page de connection administrateur</h1>
+    <h1 class="h3 mb-3 font-weight-normal text-center pt-5">Page de connection administrateur</h1>
 
     <div class="form text-center pt-5">
     <form method="post">
@@ -14,17 +14,17 @@
 
         {% if app.user %}
             <div class="mb-3">
-                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+                Vous êtes connecter en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
             </div>
         {% endif %}
 
-        <div class="pt-4">
+        <div class="pt-4 mb-5">
         <label for="inputEmail">Email</label>
         <input type="email"
                value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
         </div>
 
-        <div class="pt-4">
+        <div class="pt-4 mb-5">
         <label for="inputPassword">Mot de passe</label>
         <input type="password" name="password" id="inputPassword" class="form-control" required>
         </div>
