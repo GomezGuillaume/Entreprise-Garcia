@@ -145,7 +145,7 @@
   padding: 5%;
 }
 
-.blocG {
+.bloc1 {
   padding-bottom: 5%;
 }
 
@@ -276,6 +276,7 @@ ul li a {
 /* FOOTER */
 footer {
   background-color: rgba(0, 0, 0, 0.84);
+  margin-top: 10%;
 }
 
 footer ul {
