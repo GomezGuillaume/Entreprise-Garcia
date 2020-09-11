@@ -29,10 +29,10 @@
             <div>{{ form_widget(contactForm.phone, {'attr' : {'class' : 'widget_contact'}}) }}</div>
 
             <div class="pt-4">{{ form_label(contactForm.adress) }}</div>
+            <div>{{ form_errors(contactForm.adress) }}</div>
             <div>{{ form_widget(contactForm.adress, {'attr' : {'class' : 'widget_contact'}}) }}</div>
 
             <div class="pt-4">{{ form_label(contactForm.content) }}</div>
-            <div>{{ form_errors(contactForm.content) }}</div>
             <div>{{ form_widget(contactForm.content, {'attr' : {'class' : 'widget_contact'}}) }}</div>
 
             <div class="w-sub">{{ form_widget(contactForm.submit, {'attr' : {'class' : 'widget_submit'}}) }}</div>
