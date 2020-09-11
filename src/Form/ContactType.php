@@ -2,8 +2,11 @@
 
 namespace App\Form;
 
+use phpDocumentor\Reflection\Types\Float_;
+use phpDocumentor\Reflection\Types\Nullable;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -25,7 +28,7 @@ class ContactType extends AbstractType
             ->add('email', EmailType::class, [
                 "label" => 'E-mail'
             ])
-            ->add('phone', TextType::class, [
+            ->add('phone', NumberType::class, [
                 "label" => "Téléphone"
             ])
             ->add('adress', TextType::class, [

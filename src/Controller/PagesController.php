@@ -46,7 +46,12 @@ class PagesController extends AbstractController {
         ]);
     }
 
+    /**
+     * @Route ("/cgu-ml", name = "cgu-ml")
+     */
+    public function CguMl () {
 
-
+        return $this->render("Pages/cgu-ml.html.twig");
+    }
 
 }
