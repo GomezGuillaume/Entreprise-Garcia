@@ -4,14 +4,14 @@
 
 <h1 class="text-center pt-5" xmlns="http://www.w3.org/1999/html">Index Photos</h1>
 
-    <div class="flex-container">
+    <div class="flex-container img-resp">
     {% for medium in media %}
 
             <div>
                  <a data-fancybox="gallery" href="{{ asset('img/peinture') }}/{{ medium.name }}"  alt="{{ medium.title }}">
                 <img src="{{ asset('img/peinture') }}/{{ medium.name }}"  alt="{{ medium.title }}"></a>
                 <p>{{ medium.title }}</p>
-                <p class="btn"><a href="{{ path('media_show', {'id': medium.id}) }}">Voir la photo</a></p>
+                <button class="btn btn-info"><a href="{{ path('media_show', {'id': medium.id}) }}">Voir la photo</a></button>
             </div>
 
     {% else %}
@@ -21,7 +21,7 @@
     {% endfor %}
     </div>
 
-    <div class="btn"><a href="{{ path('media_new') }}">Ajouter une image</a></div>
+    <div class="btn btn-primary button-index1"><a href="{{ path('media_new') }}">Ajouter une image</a></div>
 
-    <div class="btn"><a href="{{ path('app_logout') }}">Se déconnecter</a></div>
+    <div class="btn btn-primary button-index2"><a href="{{ path('app_logout') }}">Se déconnecter</a></div>
 {% endblock content %}

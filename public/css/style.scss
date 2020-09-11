@@ -6,7 +6,8 @@
 @import "login";
 @import "index";
 @import "_form";
-
+@import "show";
+@import "new";
 * {
   margin: 0;
 }
@@ -23,7 +24,6 @@
 nav {
   &.primary-navigation {
     margin: 0 auto;
-    display: block;
     padding-top: 20px;
     text-align: center;
     font-size: 16px;
@@ -80,6 +80,23 @@ footer a:hover {
 
 .logofb {
   max-width: 60%;
+}
+
+@media screen and (max-width: 700px) {
+  .footer-resp{
+
+  }
+
+  .logofb{
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 904px){
+
+  .menu-resp{
+    display: none;
+  }
 }
 
 

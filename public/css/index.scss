@@ -1,14 +1,14 @@
-*{
-  margin: 0;
-}
+
 
 .flex-container {
   display: flex;
-  background-color: #F5F5F5;
+  background-color: rgba(1,1,1,0.5);
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
   align-items: flex-end;
+  margin: 10px;
+  border-radius: 20px;
 }
 
 .flex-container > div {
@@ -20,11 +20,43 @@
 img {
   width: 100%;
   max-height: 400px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .flex-container p {
   color: black;
   text-align: center;
+}
+
+.flex-container a {
+  text-decoration: none;
+}
+
+.button-1{
+  justify-content: center;
+}
+
+.button-index1, .button-index2{
+  display: flex;
+  justify-content: center;
+  width: 15%;
+  margin: 0 auto;
+  margin-top: 1%;
+}
+
+a:hover{
+  text-decoration: none;
+  color: white;
+}
+
+
+@media screen and (max-width: 575px){
+  .img-resp{
+    flex-direction: column;
+  }
+
+  .menu-resp{
+    display: none;
+  }
 }
 

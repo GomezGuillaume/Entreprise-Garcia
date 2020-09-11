@@ -3,8 +3,8 @@
 {% block content %}
     <h1 class="text-center pt-5">Importer une photo</h1>
 
-    {{ include('admin/_form.html.twig') }}
-
-    <div class="btn"><a href="{{ path('media_index') }}">Retour vers les photos</a></div>
-
+        <div>
+            {{ include('admin/_form.html.twig') }}
+        </div>
+        <button class="btn btn-dark button-new1"><a href="{{ path('media_index') }}">Retour vers les photos</a></button>
 {% endblock content %}
