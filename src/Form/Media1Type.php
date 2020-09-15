@@ -19,7 +19,8 @@ class Media1Type extends AbstractType
 
             ->add('name', FileType::class, [
                 'mapped' => false,
-                'label' => false
+                'label' => false,
+                'required' => false
             ])
         ;
     }
