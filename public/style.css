@@ -1,11 +1,12 @@
 /* PAGE ACCUEIL */
 @import url("https://fonts.googleapis.com/css?family=Roboto:700");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700display=swap");
 .fond_accueil {
-  background-image: url("img/fond_accueil.jpg");
+  background-image: url("img/peinture.jpg");
 }
 
 .divGarcia {
-  background-color: rgba(236, 240, 241, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 5%;
   margin: 7% 20%;
   border-radius: 15px;
@@ -155,12 +156,6 @@
   background-image: url("img/travaux.jpg");
 }
 
-.image {
-  max-width: 400px;
-  display: flex;
-  justify-content: center;
-}
-
 /*CONTACT*/
 #contactForm {
   margin-left: 3%;
@@ -189,13 +184,14 @@
 
 .flex-container {
   display: flex;
-  background-color: rgba(1, 1, 1, 0.5);
+  background-color: rgba(69, 69, 69, 0.5);
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
   align-items: flex-end;
   margin: 10px;
   border-radius: 20px;
+  padding-top: 5%;
 }
 
 .flex-container > div {
@@ -304,6 +300,10 @@ a:hover {
   background-attachment: fixed;
 }
 
+h1 {
+  font-family: Dancing;
+}
+
 nav {
   margin: 0 auto;
   padding-top: 20px;
@@ -313,7 +313,7 @@ nav {
 }
 
 nav ul {
-  background-color: #292929;
+  background-color: rgba(175, 121, 1, 0.75);
   padding: 1%;
   border-radius: 15px;
 }

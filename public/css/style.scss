@@ -1,13 +1,15 @@
 @import "page_accueil";
 @import "peinture_int_ext";
 @import "travaux";
-@import "realisations";
 @import "contact";
 @import "login";
 @import "index";
 @import "_form";
 @import "show";
 @import "new";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700display=swap');
+
+
 * {
   margin: 0;
 }
@@ -19,6 +21,9 @@
   background-attachment: fixed;
 }
 
+h1 {
+  font-family: Dancing;
+}
 
 //MENU
 nav {
@@ -30,7 +35,7 @@ nav {
 }
 
 nav ul{
-  background-color: #292929;
+  background-color: rgb(175 121 1 / 0.75);
   padding: 1%;
   border-radius: 15px;
 }

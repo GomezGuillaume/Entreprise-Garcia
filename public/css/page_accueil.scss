@@ -1,11 +1,11 @@
 /* PAGE ACCUEIL */
 .fond_accueil {
-  background-image: url("img/fond_accueil.jpg");
+  background-image: url("img/peinture.jpg");
   @extend %fond;
 }
 
 .divGarcia {
-  background-color: rgba(236, 240, 241, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 5%;
   margin: 7% 20%;
   border-radius: 15px;

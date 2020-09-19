@@ -2,13 +2,14 @@
 
 .flex-container {
   display: flex;
-  background-color: rgba(1,1,1,0.5);
+  background-color: rgba(69, 69, 69, 0.5);
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
   align-items: flex-end;
   margin: 10px;
   border-radius: 20px;
+  padding-top: 5%;
 }
 
 .flex-container > div {
