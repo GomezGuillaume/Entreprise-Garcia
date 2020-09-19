@@ -24,19 +24,18 @@
     </head>
 
     <!--MENU-->
-    <header class="container-fluid p-0" >
-        <nav  class="primary-navigation  d-lg-block menu-resp {% block classFondNav %}{% endblock classFondNav %}">
-            <ul class="menu col-sm-12 col-lg-12">
+    <header class="container-fluid p-0 {% block classFondNav %}{% endblock classFondNav %}" >
+        <nav class="d-lg-block menu-resp ">
+            <ul class="col-sm-12 col-lg-12">
                 <li><a href="{{ path('accueil') }}">Accueil</a></li>
                 <li><a href="{{ path('peintures') }}">Peinture intérieur - extérieur</a></li>
                 <li><a href="{{ path('travaux') }}">Travaux</a></li>
                 <li><a href="{{ path('realisations') }}">Mes réalisations</a></li>
                 <li><a href="{{ path('contact') }}">Contact</a></li>
             </ul>
-
-            {% block contentNav %}
-            {% endblock contentNav %}
         </nav>
+        {% block contentNav %}
+        {% endblock contentNav %}
     </header>
 
     <body>
@@ -45,7 +44,6 @@
         {% endblock content %}
 
     <footer class="container-fluid footer-resp">
-        <nav>
             <ul class="row justify-content-around align-items-center m-0 py-3">
                 <li class="col-3 text-center">
                     <a href="{{ path('cgu-ml') }}"> CGU-Mention légales</a>
@@ -53,7 +51,7 @@
                 <li class="col-3 text-center">
                     <a href=""> Plan du site</a>
                 </li>
-                <li class="col-1 text-center">
+                <li class="col-lg-1 col-sm-2 text-center">
                     <a href="https://www.facebook.com/Entreprise-Garcia-645327215582537"
                        target="_blank">
                         <img src="{{ asset("img/fb.png") }}"
@@ -62,7 +60,6 @@
                     </a>
                 </li>
             </ul>
-        </nav>
     </footer>
 
 
