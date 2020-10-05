@@ -14,7 +14,8 @@ class Media1Type extends AbstractType
     {
         $builder
             ->add('title', null, [
-                'label' => 'Titre de la photo'
+                'label' => 'Titre de la photo',
+                'required' => false
             ])
 
             ->add('name', FileType::class, [
