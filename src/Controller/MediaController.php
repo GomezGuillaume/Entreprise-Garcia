@@ -31,7 +31,7 @@ class MediaController extends AbstractController
     /**
      * @Route("/new", name="media_new", methods={"GET","POST"})
      */
-    public function new(Request $request, SluggerInterface $slugger): Response
+    public function new(Request $request, SluggerInterface $slugger, EntityManager $entityManager): Response
     {
         $medium = new Media();
         $form = $this->createForm(Media1Type::class, $medium);
@@ -149,6 +149,7 @@ class MediaController extends AbstractController
 
                 // je sauvegarde dans la colonne MediaCover le nom de mon image
                 $medium->setName($uniquePeintureName);
+
             }
 
             $this->getDoctrine()->getManager()->flush();
