@@ -1,18 +1,25 @@
 /* PEINTURE INTERIEUR EXTERIEUR */
 
-.bloc1{
-  background-color: rgba(236, 240, 241, 0.7);
-  padding: 5%;
+
+h1 {
+  font-size: 50px;
+  color: black;
+  text-transform: uppercase;
+  font-family: 'Dancing';
 }
 
-.bloc2{
-  background-color: rgba(236, 240, 241, 0.7);
-  padding: 5%;
+span {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
 }
 
-.bloc1{
-  padding-bottom: 5%;
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
 }
+
+
 
 
 
