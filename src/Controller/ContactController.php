@@ -27,7 +27,7 @@ class ContactController extends AbstractController
                 ->setFrom($contact ["email"])
 
                 //on attribut le destinataire
-                ->setTo("guillaume.gomez@lapiscine.pro")
+                ->setTo("contact@entreprise-garcia.com")
 
                 ->setBody(
                     $this->renderView("emails/email.html.twig", compact("contact")),
