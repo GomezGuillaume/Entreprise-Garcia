@@ -313,7 +313,7 @@ nav {
 }
 
 nav ul {
-  background-color: rgba(175, 121, 1, 0.75);
+  background-color: rgba(0, 126, 146, 0.91);
   padding: 1%;
   border-radius: 15px;
 }
@@ -337,7 +337,7 @@ li:hover {
 }
 
 ul li a:hover {
-  color: #548687;
+  color: #000;
   text-decoration: none;
 }
 
