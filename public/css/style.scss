@@ -72,7 +72,7 @@ ul li a { transition: all 0.5s ease; }
 /* FOOTER */
 footer {
   background-color: rgba(0, 0, 0, 0.84);
-  margin-top: 50%;
+  margin-top: 40%;
 }
 
 footer ul {
@@ -92,6 +92,8 @@ footer a:hover {
   max-width: 20%;
 }
 
+
+/* RESPONSIVE */
 @media screen and (max-width: 700px) {
   .footer-resp{
 
