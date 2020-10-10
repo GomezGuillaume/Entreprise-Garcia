@@ -200,6 +200,18 @@ span {
 }
 
 /*CONTACT*/
+.fond-contact {
+  background-image: url("img/contact.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 130vh;
+  background-attachment: fixed;
+}
+
+.contact {
+  color: white;
+}
+
 #contactForm {
   margin-left: 3%;
   padding-bottom: 3%;

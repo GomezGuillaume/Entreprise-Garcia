@@ -1,8 +1,10 @@
 {% extends "Base/base.html.twig" %}
 
-{% block content %}
+{% block classFondNav %}fond-contact{% endblock classFondNav %}
 
-    <h2 class="row justify-content-center pt-5">Nous contacter</h2>
+{% block contentNav %}
+
+    <h2 class="row justify-content-center pt-5 contact">Nous contacter</h2>
 
         {% for message in app.flashes ('message') %}
             <div class="alert alert-success text-align-center" role="alert">
@@ -12,32 +14,31 @@
 
     <div id="contactForm" class="pt-5 row">
         {{ form_start(contactForm) }}
-            <div>{{ form_label(contactForm.lastname) }}</div>
+            <div class="contact">{{ form_label(contactForm.lastname) }}</div>
             <div>{{ form_errors(contactForm.lastname) }}</div>
             <div>{{ form_widget(contactForm.lastname, {'attr' : {'class' : 'widget_contact'}}) }}</div>
 
-            <div class="pt-4">{{ form_label(contactForm.firstname) }}</div>
+            <div class="pt-4 contact">{{ form_label(contactForm.firstname) }}</div>
             <div>{{ form_errors(contactForm.firstname) }}</div>
             <div>{{ form_widget(contactForm.firstname, {'attr' : {'class' : 'widget_contact'}}) }}</div>
 
-            <div class="pt-4">{{ form_label(contactForm.email) }}</div>
+            <div class="pt-4 contact">{{ form_label(contactForm.email) }}</div>
             <div>{{ form_errors(contactForm.email) }}</div>
             <div>{{ form_widget(contactForm.email, {'attr' : {'class' : 'widget_contact'}}) }}</div>
 
-            <div class="pt-4">{{ form_label(contactForm.phone) }}</div>
+            <div class="pt-4 contact">{{ form_label(contactForm.phone) }}</div>
             <div>{{ form_errors(contactForm.phone) }}</div>
             <div>{{ form_widget(contactForm.phone, {'attr' : {'class' : 'widget_contact'}}) }}</div>
 
-            <div class="pt-4">{{ form_label(contactForm.adress) }}</div>
+            <div class="pt-4 contact">{{ form_label(contactForm.adress) }}</div>
             <div>{{ form_errors(contactForm.adress) }}</div>
             <div>{{ form_widget(contactForm.adress, {'attr' : {'class' : 'widget_contact'}}) }}</div>
 
-            <div class="pt-4">{{ form_label(contactForm.content) }}</div>
+            <div class="pt-4 contact">{{ form_label(contactForm.content) }}</div>
             <div>{{ form_widget(contactForm.content, {'attr' : {'class' : 'widget_contact'}}) }}</div>
 
             <div class="w-sub">{{ form_widget(contactForm.submit, {'attr' : {'class' : 'widget_submit'}}) }}</div>
         {{ form_end(contactForm) }}
     </div>
 
-
-{% endblock content %}
+{% endblock contentNav %}
