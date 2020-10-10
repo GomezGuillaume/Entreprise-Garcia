@@ -31,6 +31,27 @@ span {
   font-size: 18px;
 }
 
+.icons{
+  width: 5%;
+}
+
+.icon{
+  justify-content: space-evenly;
+  margin: 15% 0%;
+  background-color: cadetblue;
+  margin: 15% 5%;
+  border-radius: 30px;
+  padding: 2%;
+}
+
+.icons > p{
+  text-align: center;
+  margin-top: 40%;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
 @keyframes caret {
   50% {
     border-color: transparent;
