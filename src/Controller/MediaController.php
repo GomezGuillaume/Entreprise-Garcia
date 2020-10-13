@@ -31,7 +31,7 @@ class MediaController extends AbstractController
     /**
      * @Route("/new", name="media_new", methods={"GET","POST"})
      */
-    public function new(Request $request, SluggerInterface $slugger, EntityManager $entityManager): Response
+    public function new(Request $request, SluggerInterface $slugger, EntityManagerInterface $entityManager): Response
     {
         $medium = new Media();
         $form = $this->createForm(Media1Type::class, $medium);
